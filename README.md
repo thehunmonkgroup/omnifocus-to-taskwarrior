@@ -35,7 +35,7 @@ when things don't work right the first time!
 
 #### On the machine running the TaskWarrior client:
 
- 1. Load the CSV file to the server with TaskWarrior installed, along with the
+ 1. Load the CSV file to the machine with TaskWarrior installed, along with the
     ```omnifocus-to-taskwarrior.py``` script.
 
  2. Make sure ```omnifocus-to-taskwarrior.py``` is executable then run
@@ -58,7 +58,7 @@ when things don't work right the first time!
 ### Supported data conversions
 
 ```
-  Task ID -> Used to programmatically calculate project/subproject hierarchy.
+  Task ID -> Used to programmatically calculate project/subproject hierarchy
   Type -> Not used, project/task status calculated by hierarchy
   Name -> description
   Status -> Not used, calculated from other values
@@ -80,7 +80,7 @@ be made in the translation.
 
 TaskWarrior cannot have projects with no tasks, nor does it have any
 outlining capability for tasks (tasks can be made 'dependant' on other tasks,
-but not simply live beneath other tasks in an outline fashion.
+but not simply live beneath other tasks in an outline fashion).
 
 If you choose to keep a project hierarchy, here's what you need to know about
 the conversion:
@@ -103,6 +103,12 @@ rational options in this case seem to be:
 
 ### Other caveats
 
+ * Notes - TaskWarrior doesn't have proper multiline notes, so if notes are exported,
+   they live in a 'notes' [UDA](https://taskwarrior.org/docs/udas.html). Also due to
+   [this current bug](https://github.com/GothenburgBitFactory/taskwarrior/issues/2107),
+   all newlines are replaced by a ```###NEWLINE###``` token, and you'll have to figure
+   out how to deal with making that easily displayable/editable. I currently use the
+   [OneNote](https://github.com/thehunmonkgroup/onenote) script I wrote. :)
  * Context - Hierarchical contexts are not exported, only the final context in the hierarchy
  * Folders - Not exported, if you want to keep that hierarchy, turn it into a top-level project
 
