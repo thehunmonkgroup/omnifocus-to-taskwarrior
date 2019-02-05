@@ -30,7 +30,7 @@ when things don't work right the first time!
      hierarchy. See below for more information on how the hierarchy is exported
      into a format TaskWarrior can work with.
 
- 1. Select ```File -> Export...``` from the top menu, and export the file as
+ 2. Select ```File -> Export...``` from the top menu, and export the file as
     CSV.
 
 #### On the machine running the TaskWarrior client:
@@ -38,20 +38,20 @@ when things don't work right the first time!
  1. Load the CSV file to the server with TaskWarrior installed, along with the
     ```taskwarrior-export.py``` script.
 
- 1. Make sure ```taskwarrior-export.py``` is executable then run
+ 2. Make sure ```taskwarrior-export.py``` is executable then run
     ```taskwarrior-export.py -h``` to see the list of available arguments
     for the script.
 
- 1. Run the script with your chosen arguments to generate a JSON file format
+ 3. Run the script with your chosen arguments to generate a JSON file format
     suitable for import by TaskWarrior. If you get any errors, you're on your
     own to figure it out ;)
 
- 1. The generated JSON file is fairly easy to inspect to see if the data is
+ 4. The generated JSON file is fairly easy to inspect to see if the data is
     coming out the way you want it. The
     [TaskWarrior JSON format specification](https://taskwarrior.org/docs/design/task.html)
     can help guide you.
 
- 1. Import the data into TaskWarrior via: ```task import [json_filename]```,
+ 5. Import the data into TaskWarrior via: ```task import [json_filename]```,
     and for heaven's sake make a backup of any existing TaskWarrior data
     beforehand!
 
