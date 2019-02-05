@@ -18,40 +18,42 @@ when things don't work right the first time!
 
 ### Usage
 
- 1. In OmniFocus:
-   1. Configure the 'Outline' section to contain those items you want exported
-     * Only those items that are visible are exported, so if your Perspective is
-       configured to hide items that you want exported, make the necessary
-       adjustments
-     * The export mode will depend on the 'Project hierarchy' setting you have
-       enabled. For a flat list of actions with no associated projects, disable
-       the hierarchy, for a hierarchical project list of actions, enable the
-       hierarchy. See below for more information on how the hierarchy is exported
-       into a format TaskWarrior can work with.
+#### In OmniFocus
 
-   1. Select ```File -> Export...``` from the top menu, and export the file as
-      CSV.
+ 1. Configure the 'Outline' section to contain those items you want exported
+   * Only those items that are visible are exported, so if your Perspective is
+     configured to hide items that you want exported, make the necessary
+     adjustments
+   * The export mode will depend on the 'Project hierarchy' setting you have
+     enabled. For a flat list of actions with no associated projects, disable
+     the hierarchy, for a hierarchical project list of actions, enable the
+     hierarchy. See below for more information on how the hierarchy is exported
+     into a format TaskWarrior can work with.
 
- 1. On the machine running the TaskWarrior client:
-   1. Load the CSV file to the server with TaskWarrior installed, along with the
-      ```taskwarrior-export.py``` script.
+ 1. Select ```File -> Export...``` from the top menu, and export the file as
+    CSV.
 
-   1. Make sure ```taskwarrior-export.py``` is executable then run
-      ```taskwarrior-export.py -h``` to see the list of available arguments
-      for the script.
+#### On the machine running the TaskWarrior client:
 
-   1. Run the script with your chosen arguments to generate a JSON file format
-      suitable for import by TaskWarrior. If you get any errors, you're on your
-      own to figure it out ;)
+ 1. Load the CSV file to the server with TaskWarrior installed, along with the
+    ```taskwarrior-export.py``` script.
 
-   1. The generated JSON file is fairly easy to inspect to see if the data is
-      coming out the way you want it. The
-      [TaskWarrior JSON format specification](https://taskwarrior.org/docs/design/task.html)
-      can help guide you.
+ 1. Make sure ```taskwarrior-export.py``` is executable then run
+    ```taskwarrior-export.py -h``` to see the list of available arguments
+    for the script.
 
-   1. Import the data into TaskWarrior via: ```task import [json_filename]```,
-      and for heaven's sake make a backup of any existing TaskWarrior data
-      beforehand!
+ 1. Run the script with your chosen arguments to generate a JSON file format
+    suitable for import by TaskWarrior. If you get any errors, you're on your
+    own to figure it out ;)
+
+ 1. The generated JSON file is fairly easy to inspect to see if the data is
+    coming out the way you want it. The
+    [TaskWarrior JSON format specification](https://taskwarrior.org/docs/design/task.html)
+    can help guide you.
+
+ 1. Import the data into TaskWarrior via: ```task import [json_filename]```,
+    and for heaven's sake make a backup of any existing TaskWarrior data
+    beforehand!
 
 ### Supported data conversions
 
