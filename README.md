@@ -36,10 +36,10 @@ when things don't work right the first time!
 #### On the machine running the TaskWarrior client:
 
  1. Load the CSV file to the server with TaskWarrior installed, along with the
-    ```taskwarrior-export.py``` script.
+    ```omnifocus-to-taskwarrior.py``` script.
 
- 2. Make sure ```taskwarrior-export.py``` is executable then run
-    ```taskwarrior-export.py -h``` to see the list of available arguments
+ 2. Make sure ```omnifocus-to-taskwarrior.py``` is executable then run
+    ```omnifocus-to-taskwarrior.py -h``` to see the list of available arguments
     for the script.
 
  3. Run the script with your chosen arguments to generate a JSON file format
