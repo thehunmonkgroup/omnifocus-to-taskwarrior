@@ -1,9 +1,9 @@
-# Export OmniFocus data to TaskWarrior
+# Export OmniFocus data to Taskwarrior
 
 **WARNING:** *This project is provided as a courtesy and convenience for those
 that are looking to move their data from
 [OmniFocus](https://www.omnigroup.com/omnifocus) to
-[TaskWarrior](https://taskwarrior.org) -- no claim is made that it will work
+[Taskwarrior](https://taskwarrior.org) -- no claim is made that it will work
 for you, or that your data will be converted in a manner that satisfies you,
 and no unpaid support will be provided. See the [support](#support) section
 below for more details.*
@@ -28,14 +28,14 @@ when things don't work right the first time!
      enabled. For a flat list of actions with no associated projects, disable
      the hierarchy, for a hierarchical project list of actions, enable the
      hierarchy. See below for more information on how the hierarchy is exported
-     into a format TaskWarrior can work with.
+     into a format Taskwarrior can work with.
 
  2. Select ```File -> Export...``` from the top menu, and export the file as
     CSV.
 
-#### On the machine running the TaskWarrior client:
+#### On the machine running the Taskwarrior client:
 
- 1. Load the CSV file to the machine with TaskWarrior installed, along with the
+ 1. Load the CSV file to the machine with Taskwarrior installed, along with the
     ```omnifocus-to-taskwarrior.py``` script.
 
  2. Make sure ```omnifocus-to-taskwarrior.py``` is executable then run
@@ -43,16 +43,16 @@ when things don't work right the first time!
     for the script.
 
  3. Run the script with your chosen arguments to generate a JSON file format
-    suitable for import by TaskWarrior. If you get any errors, you're on your
+    suitable for import by Taskwarrior. If you get any errors, you're on your
     own to figure it out ;)
 
  4. The generated JSON file is fairly easy to inspect to see if the data is
     coming out the way you want it. The
-    [TaskWarrior JSON format specification](https://taskwarrior.org/docs/design/task.html)
+    [Taskwarrior JSON format specification](https://taskwarrior.org/docs/design/task.html)
     can help guide you.
 
- 5. Import the data into TaskWarrior via: ```task import [json_filename]```,
-    and for heaven's sake make a backup of any existing TaskWarrior data
+ 5. Import the data into Taskwarrior via: ```task import [json_filename]```,
+    and for heaven's sake make a backup of any existing Taskwarrior data
     beforehand!
 
 ### Supported data conversions
@@ -74,11 +74,11 @@ when things don't work right the first time!
 
 #### How project hierarchies are calculated
 
-OmniFocus and TaskWarrior have different approaches to how projects and
+OmniFocus and Taskwarrior have different approaches to how projects and
 actions (tasks) are organized, and this requires that some adjustments
 be made in the translation.
 
-TaskWarrior cannot have projects with no tasks, nor does it have any
+Taskwarrior cannot have projects with no tasks, nor does it have any
 outlining capability for tasks (tasks can be made 'dependant' on other tasks,
 but not simply live beneath other tasks in an outline fashion).
 
@@ -88,7 +88,7 @@ the conversion:
  * Only those items at the very deepest part of a particular hierarchy (the
    'leaves') are considered to be tasks.
  * Everything else is either a top-level project, or if it's somewhere under
-   a top-level project, it is subproject via TaskWarrior's dot notation
+   a top-level project, it is a subproject via Taskwarrior's dot notation
    (eg. MyProject.MySubproject)
  * If notes are exported, any notes attached to something determined to be a
    project or subproject will have a task created under that particular project
@@ -99,18 +99,19 @@ project hierarchy, you could end up with unusably long project names. The
 rational options in this case seem to be:
 
  1. Flatten out your hierarchy more
- 2. Use short names for the project/subprojects
+ 2. Use short names for projects/subprojects
 
 ### Other caveats
 
- * Notes - TaskWarrior doesn't have proper multiline notes, so if notes are exported,
+ * Notes - Taskwarrior doesn't have proper multiline notes, so if notes are exported,
    they live in a 'notes' [UDA](https://taskwarrior.org/docs/udas.html). Also due to
    [this current bug](https://github.com/GothenburgBitFactory/taskwarrior/issues/2107),
    all newlines are replaced by a ```###NEWLINE###``` token, and you'll have to figure
    out how to deal with making that easily displayable/editable. I currently use the
    [OneNote](https://github.com/thehunmonkgroup/onenote) script I wrote. :)
  * Context - Hierarchical contexts are not exported, only the final context in the hierarchy
- * Folders - Not exported, if you want to keep that hierarchy, turn it into a top-level project
+ * Folders - Not exported, if you want to keep that hierarchy, turn it into a project
+   in OmniFocus
 
 ## Support
 
