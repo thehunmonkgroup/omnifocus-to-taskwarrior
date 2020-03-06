@@ -115,11 +115,10 @@ rational options in this case seem to be:
 
 ## Support
 
-The issue tracker for this project is provided to file bug reports, feature
-requests, and project tasks -- support requests are not accepted via the issue
-tracker. For all support-related issues, including configuration, usage, and
+Issue tracking is disabled for this repository, and no bug reports, feature
+requests or support requests will be addressed.
+
+For all support-related issues, including configuration, usage, and
 training, consider hiring a competent consultant.
 
-It's unlikely that I will add any more features, unless they are accompanied
-by a pull request. Bug fixes are a possibility, if they don't involve a crazy
-amount of work.
+Pull requests will be considered should you wish to contribure to the already massive amount of freely available work that went into this project... ;)
